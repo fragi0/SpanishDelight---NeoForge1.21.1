@@ -2,19 +2,17 @@ package com.devjulen.spanishdelight.common.event;
 
 import com.devjulen.spanishdelight.SpanishDelight;
 import com.devjulen.spanishdelight.common.registry.ModItemsRegistry;
-import com.devjulen.spanishdelight.common.tag.SDModTags;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
-import net.minecraftforge.event.village.VillagerTradesEvent;
-import net.minecraftforge.event.village.WandererTradesEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.event.village.VillagerTradesEvent;
+import net.neoforged.neoforge.event.village.WandererTradesEvent;
 
-import javax.swing.text.html.HTML;
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = SpanishDelight.MOD_ID)
@@ -22,7 +20,7 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void addCustomTrades(VillagerTradesEvent event) {
-        if(event.getType().equals(VillagerProfession.FARMER)) {
+        if (event.getType().equals(VillagerProfession.FARMER)) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             // Level 1

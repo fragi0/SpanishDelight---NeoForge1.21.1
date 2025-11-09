@@ -6,13 +6,11 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.Collections;
 import java.util.List;
@@ -39,7 +37,6 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new ItemTags(packOutput, lookUpProvider, blockStates.contentsGetter(), existingFileHelper));
 
         generator.addProvider(event.includeServer(), new Recipes(packOutput));
-
         generator.addProvider(event.includeServer(), new WorldGen(packOutput, lookUpProvider));
     }
 }

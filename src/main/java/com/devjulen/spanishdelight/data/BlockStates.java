@@ -8,12 +8,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
-import vectorwing.farmersdelight.FarmersDelight;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.ForgeRegistries;
 
 import java.util.function.Function;
 
@@ -53,7 +51,6 @@ public class BlockStates extends BlockStateProvider {
 
     public void makeGreenBeanCrop(CropBlock block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> strawberryStates(state, block, modelName, textureName);
-
         getVariantBuilder(block).forAllStates(function);
     }
 
@@ -61,7 +58,6 @@ public class BlockStates extends BlockStateProvider {
         ConfiguredModel[] models = new ConfiguredModel[1];
         models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((GreenBeanCropBlock) block).getAgeProperty()),
                 new ResourceLocation(SpanishDelight.MOD_ID, "block/" + textureName + state.getValue(((GreenBeanCropBlock) block).getAgeProperty()))).renderType("cutout"));
-
         return models;
     }
 }

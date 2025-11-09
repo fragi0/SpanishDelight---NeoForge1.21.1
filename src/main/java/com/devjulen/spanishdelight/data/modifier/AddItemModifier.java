@@ -5,14 +5,13 @@ import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraftforge.common.loot.IGlobalLootModifier;
-import net.minecraftforge.common.loot.LootModifier;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
+import net.neoforged.neoforge.common.loot.LootModifier;
+import net.neoforged.neoforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
@@ -32,12 +31,11 @@ public class AddItemModifier extends LootModifier {
 
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> objectArrayList, LootContext lootContext) {
-        for(LootItemCondition condition : this.conditions) {
-            if(!condition.test(lootContext)) return objectArrayList;
+        for (LootItemCondition condition : this.conditions) {
+            if (!condition.test(lootContext)) return objectArrayList;
         }
 
         objectArrayList.add(new ItemStack(item, getAmountBasedOnItem(item)));
-
         return objectArrayList;
     }
 
@@ -47,8 +45,7 @@ public class AddItemModifier extends LootModifier {
     }
 
     private int getAmountBasedOnItem(Item item) {
-        if(item.equals(ModItemsRegistry.SQUID_RING.get())) return rand.nextInt(2, 5);
-
+        if (item.equals(ModItemsRegistry.SQUID_RING.get())) return rand.nextInt(2, 5);
         return 1;
     }
 }

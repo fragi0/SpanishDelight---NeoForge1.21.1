@@ -6,17 +6,16 @@ import com.devjulen.spanishdelight.common.item.GreenBean;
 import com.devjulen.spanishdelight.common.item.SquidRing;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.registries.RegistryObject;
+
 import static com.devjulen.spanishdelight.common.registry.ModCreativeTabs.addToTab;
 
 public class ModItemsRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SpanishDelight.MOD_ID);
 
-    // Helper methods
     public static Item.Properties basicItem() {
         return new Item.Properties();
     }
@@ -29,7 +28,8 @@ public class ModItemsRegistry {
     public static final RegistryObject<Item> SLICED_ONION = addToTab(ITEMS.register("sliced_onion", () -> new Item(new Item.Properties().food(SDFoodValues.SLICED_ONION))));
     public static final RegistryObject<Item> GARLIC = addToTab(ITEMS.register("garlic", () -> new Item(new Item.Properties().food(SDFoodValues.GARLIC))));
 
-    public static final RegistryObject<Item> GREEN_BEAN = addToTab(ITEMS.register("green_bean", () -> new GreenBean(ModBlocksRegistry.GREEN_BEAN_CROP.get(), (new Item.Properties()).food(SDFoodValues.GREEN_BEAN))));
+    public static final RegistryObject<Item> GREEN_BEAN = addToTab(ITEMS.register("green_bean",
+            () -> new GreenBean(ModBlocksRegistry.GREEN_BEAN_CROP.get(), new Item.Properties().food(SDFoodValues.GREEN_BEAN))));
 
     public static final RegistryObject<Item> RED_PEPPER = addToTab(ITEMS.register("red_pepper", () -> new Item(new Item.Properties().food(SDFoodValues.RED_PEPPER))));
     public static final RegistryObject<Item> GREEN_PEPPER = addToTab(ITEMS.register("green_pepper", () -> new Item(new Item.Properties().food(SDFoodValues.GREEN_PEPPER))));

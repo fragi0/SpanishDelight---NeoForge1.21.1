@@ -10,7 +10,7 @@ import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 import javax.annotation.Nullable;
@@ -18,7 +18,9 @@ import java.util.concurrent.CompletableFuture;
 
 public class ItemTags extends ItemTagsProvider {
 
-    public ItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, CompletableFuture<TagsProvider.TagLookup<Block>> blockTagProvider, @Nullable ExistingFileHelper existingFileHelper) {
+    public ItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> provider,
+                    CompletableFuture<TagsProvider.TagLookup<Block>> blockTagProvider,
+                    @Nullable ExistingFileHelper existingFileHelper) {
         super(output, provider, blockTagProvider, SpanishDelight.MOD_ID, existingFileHelper);
     }
 
@@ -31,7 +33,7 @@ public class ItemTags extends ItemTagsProvider {
 
     private void registerModTags() {
         tag(SDModTags.WATER_INGREDIENT).add(Items.WATER_BUCKET);
-        tag(SDModTags.MILK_INGREDIENT).add(Items.MILK_BUCKET, vectorwing.farmersdelight.common.registry.ModItems.MILK_BOTTLE.get());
+        tag(SDModTags.MILK_INGREDIENT).add(Items.MILK_BUCKET, ModItems.MILK_BOTTLE.get());
     }
 
     public void registerCompatibilityTags() {

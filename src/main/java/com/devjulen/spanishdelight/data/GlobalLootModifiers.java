@@ -8,8 +8,8 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.*;
-import net.minecraftforge.common.data.GlobalLootModifierProvider;
-import net.minecraftforge.common.loot.LootTableIdCondition;
+import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
+import net.neoforged.neoforge.common.loot.LootTableIdCondition;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class GlobalLootModifiers extends GlobalLootModifierProvider {
@@ -22,7 +22,6 @@ public class GlobalLootModifiers extends GlobalLootModifierProvider {
 
     @Override
     protected void start() {
-        // Squid ring added to the regular squid
         add("squid_ring_from_squid", new AddItemModifier(new LootItemCondition[]{
                 new LootTableIdCondition.Builder(new ResourceLocation("entities/squid")).build(),
                 LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.KILLER,
@@ -43,7 +42,6 @@ public class GlobalLootModifiers extends GlobalLootModifierProvider {
         },
                 ModItemsRegistry.SQUID_RING.get()));
 
-        // Squid ring added to the glowing squid
         add("squid_ring_from_glowing_squid", new AddItemModifier(new LootItemCondition[]{
                 new LootTableIdCondition.Builder(new ResourceLocation("entities/glow_squid")).build(),
                 LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.KILLER,
@@ -64,6 +62,4 @@ public class GlobalLootModifiers extends GlobalLootModifierProvider {
         },
                 ModItemsRegistry.SQUID_RING.get()));
     }
-
-
 }
