@@ -5,6 +5,7 @@ import com.devjulen.spanishdelight.common.SDFoodValues;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -12,26 +13,27 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import static com.devjulen.spanishdelight.common.registry.ModCreativeTabs.addToTab;
 
 public class ModItemsRegistry {
+
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(Registries.ITEM, SpanishDelight.MOD_ID);
 
-    // Ingredientes base
+    // Ingredientes
     public static final DeferredHolder<Item, Item> PAPRIKA =
             addToTab(ITEMS.register("paprika", () -> new Item(new Item.Properties())));
 
-    // Prueba
-    public static final DeferredHolder<Item, Item> TEST_BLOCK_ITEM =
-            addToTab(ITEMS.register("test_block", () -> new BlockItem(ModBlocksRegistry.TEST_BLOCK.get(), new Item.Properties())));
-
-    // Cortes e ingredientes
     public static final DeferredHolder<Item, Item> SLICED_POTATO =
             addToTab(ITEMS.register("sliced_potato", () -> new Item(new Item.Properties().food(SDFoodValues.SLICED_POTATO))));
     public static final DeferredHolder<Item, Item> SLICED_ONION =
             addToTab(ITEMS.register("sliced_onion", () -> new Item(new Item.Properties().food(SDFoodValues.SLICED_ONION))));
     public static final DeferredHolder<Item, Item> GARLIC =
             addToTab(ITEMS.register("garlic", () -> new Item(new Item.Properties().food(SDFoodValues.GARLIC))));
-    public static final DeferredHolder<Item, Item> GREEN_BEAN =               // Provisional (después será semilla del crop)
-            addToTab(ITEMS.register("green_bean", () -> new Item(new Item.Properties().food(SDFoodValues.GREEN_BEAN))));
+
+    // Semilla + alimento del cultivo
+    public static final DeferredHolder<Item, Item> GREEN_BEAN =
+            addToTab(ITEMS.register("green_bean", () ->
+                    new ItemNameBlockItem(ModBlocksRegistry.GREEN_BEAN_CROP.get(),
+                            new Item.Properties().food(SDFoodValues.GREEN_BEAN))));
+
     public static final DeferredHolder<Item, Item> RED_PEPPER =
             addToTab(ITEMS.register("red_pepper", () -> new Item(new Item.Properties().food(SDFoodValues.RED_PEPPER))));
     public static final DeferredHolder<Item, Item> GREEN_PEPPER =
@@ -59,5 +61,19 @@ public class ModItemsRegistry {
     public static final DeferredHolder<Item, Item> PANTUMACA =
             addToTab(ITEMS.register("pantumaca", () -> new Item(new Item.Properties().food(SDFoodValues.PANTUMACA))));
 
-    public static void register(IEventBus bus) { ITEMS.register(bus); }
+    // BlockItems silvestres (aparecerán después en worldgen)
+    public static final DeferredHolder<Item, Item> WILD_GARLIC =
+            addToTab(ITEMS.register("wild_garlic", () -> new BlockItem(ModBlocksRegistry.WILD_GARLIC.get(), new Item.Properties())));
+    public static final DeferredHolder<Item, Item> WILD_RED_PEPPER =
+            addToTab(ITEMS.register("wild_red_pepper", () -> new BlockItem(ModBlocksRegistry.WILD_RED_PEPPER.get(), new Item.Properties())));
+    public static final DeferredHolder<Item, Item> WILD_GREEN_PEPPER =
+            addToTab(ITEMS.register("wild_green_pepper", () -> new BlockItem(ModBlocksRegistry.WILD_GREEN_PEPPER.get(), new Item.Properties())));
+
+    // Bloque de prueba (opcional quitarlo luego)
+    public static final DeferredHolder<Item, Item> TEST_BLOCK_ITEM =
+            addToTab(ITEMS.register("test_block", () -> new BlockItem(ModBlocksRegistry.TEST_BLOCK.get(), new Item.Properties())));
+
+    public static void register(IEventBus bus) {
+        ITEMS.register(bus);
+    }
 }
