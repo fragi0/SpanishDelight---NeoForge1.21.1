@@ -11,15 +11,17 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootModifier;
-import net.neoforged.neoforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 import java.util.function.Supplier;
 
 public class AddItemModifier extends LootModifier {
-    public static final Supplier<Codec<AddItemModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.create(inst -> codecStart(inst).and(ForgeRegistries.ITEMS.getCodec()
-            .fieldOf("item").forGetter(m -> m.item)).apply(inst, AddItemModifier::new)));
+    public static final Supplier<Codec<AddItemModifier>> CODEC = Suppliers.memoize(
+            () -> RecordCodecBuilder.create(inst -> codecStart(inst)
+                    .and(NeoForgeRegistries.ITEMS.getCodec().fieldOf("item").forGetter(m -> m.item))
+                    .apply(inst, AddItemModifier::new)));
 
     private final Item item;
     private final Random rand = new Random();
@@ -30,13 +32,12 @@ public class AddItemModifier extends LootModifier {
     }
 
     @Override
-    protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> objectArrayList, LootContext lootContext) {
+    protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         for (LootItemCondition condition : this.conditions) {
-            if (!condition.test(lootContext)) return objectArrayList;
+            if (!condition.test(context)) return generatedLoot;
         }
-
-        objectArrayList.add(new ItemStack(item, getAmountBasedOnItem(item)));
-        return objectArrayList;
+        generatedLoot.add(new ItemStack(item, getAmountBasedOnItem(item)));
+        return generatedLoot;
     }
 
     @Override
@@ -45,7 +46,9 @@ public class AddItemModifier extends LootModifier {
     }
 
     private int getAmountBasedOnItem(Item item) {
-        if (item.equals(ModItemsRegistry.SQUID_RING.get())) return rand.nextInt(2, 5);
+        if (item.equals(ModItemsRegistry.SQUID_RING.get())) {
+            return rand.nextInt(2, 5);
+        }
         return 1;
     }
 }

@@ -16,7 +16,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-@SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = SpanishDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
     @SubscribeEvent
@@ -24,7 +23,7 @@ public class DataGenerators {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-        CompletableFuture<HolderLookup.Provider> lookUpProvider = event.getLookupProvider();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(event.includeClient(), new ItemModels(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new BlockStates(packOutput, existingFileHelper));
@@ -32,11 +31,9 @@ public class DataGenerators {
                 new LootTableProvider.SubProviderEntry(SDBlockLootTables::new, LootContextParamSets.BLOCK)
         )));
         generator.addProvider(event.includeServer(), new GlobalLootModifiers(packOutput));
-
-        BlockTags blockStates = generator.addProvider(event.includeServer(), new BlockTags(packOutput, lookUpProvider, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ItemTags(packOutput, lookUpProvider, blockStates.contentsGetter(), existingFileHelper));
-
+        BlockTags blockTags = generator.addProvider(event.includeServer(), new BlockTags(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeClient(), new ItemTags(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
         generator.addProvider(event.includeServer(), new Recipes(packOutput));
-        generator.addProvider(event.includeServer(), new WorldGen(packOutput, lookUpProvider));
+        generator.addProvider(event.includeServer(), new WorldGen(packOutput, lookupProvider));
     }
 }

@@ -6,36 +6,31 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
-@Mod.EventBusSubscriber(modid = SpanishDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModCreativeTabs {
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, SpanishDelight.MOD_ID);
+    public static final DeferredRegister<CreativeModeTab> TABS =
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, SpanishDelight.MOD_ID);
 
-    public static final List<Supplier<? extends ItemLike>> CREATIVE_TAB_ITEMS = new ArrayList<>();
+    private static final List<Supplier<? extends ItemLike>> ENTRIES = new ArrayList<>();
 
-    public static final RegistryObject<CreativeModeTab> TAB_SPANISH_DELIGHT = CREATIVE_TABS.register("sdelight_tab",
-            () -> CreativeModeTab.builder()
-                    .title(Component.translatable("creativetab.sdelight_tab"))
-                    .icon(ModItemsRegistry.SPANISH_TORTILLA.get()::getDefaultInstance)
-                    .displayItems((itemDisplayParameters, output) -> {
-                        CREATIVE_TAB_ITEMS.forEach(itemLike -> output.accept(itemLike.get()));
-                    })
-                    .build()
-    );
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MAIN_TAB =
+            TABS.register("main_tab", () -> CreativeModeTab.builder()
+                    .title(Component.translatable("tab.spanishdelight"))
+                    .icon(ModItemsRegistry.PAPRIKA.get()::getDefaultInstance)
+                    .displayItems((params, output) -> ENTRIES.forEach(s -> output.accept(s.get())))
+                    .build());
 
-    public static void register(IEventBus eventBus) { CREATIVE_TABS.register(eventBus); }
+    public static void register(IEventBus bus) { TABS.register(bus); }
 
-    public static <T extends Item> RegistryObject<T> addToTab(RegistryObject<T> itemLike) {
-        CREATIVE_TAB_ITEMS.add(itemLike);
-        return itemLike;
+    public static <T extends Item> DeferredHolder<Item, T> addToTab(DeferredHolder<Item, T> holder) {
+        ENTRIES.add(holder);
+        return holder;
     }
 }
