@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PEP",
+    "EGE",
+    "PTP"
+  ],
+  "key": {
+    "P": { "item": "spanishdelight:sliced_potato" },
+    "E": { "item": "minecraft:egg" },
+    "G": { "item": "spanishdelight:sliced_onion" },
+    "T": { "item": "minecraft:torchflower" }  // Ejemplo, cambia por receta real
+  },
+  "result": {
+    "item": "spanishdelight:spanish_tortilla",
+    "count": 1
+  }
+}
