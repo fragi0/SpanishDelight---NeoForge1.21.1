@@ -1,0 +1,34 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"  # Reemplaza con tu licencia real
+
+[[mods]]
+modId="spanishdelight"  # Reemplaza con el ID de tu mod
+version="1.0.0"         # Reemplaza con la versión de tu mod
+displayName="Spanish Delight"
+authors="Fragi0"
+description="Añade un montón de delicias a Minecraft"
+logoFile="spanishdelightbanner.png"
+logoBlur=true
+displayURL="https://github.com/fragi0/SpanishDelight---NeoForge1.21.1"
+
+[[dependencies.spanishdelight]]
+modId="neoforge"
+mandatory=true
+versionRange="[1.21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.spanishdelight]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.spanishdelight]]
+modId="farmersdelight"
+mandatory=true
+versionRange="[1.2.4,)"
+ordering="AFTER"
+side="BOTH"

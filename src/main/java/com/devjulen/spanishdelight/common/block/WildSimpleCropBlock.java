@@ -22,8 +22,7 @@ public class WildSimpleCropBlock extends BushBlock {
     }
 
     @Override
-    protected MapCodec<? extends BushBlock> codec() {
-        // Igual que arriba: si mappings muestran firma distinta, ajusta a MapCodec<? extends Block>.
+    public MapCodec<? extends BushBlock> codec() {
         return CODEC;
     }
 
