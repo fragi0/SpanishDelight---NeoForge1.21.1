@@ -9,6 +9,8 @@ import com.devjulen.spanishdelight.data.ModItemModelProvider;
 import com.devjulen.spanishdelight.data.ModItemTagsProvider;
 import com.devjulen.spanishdelight.data.ModLootTableProvider;
 import com.devjulen.spanishdelight.data.ModRecipeProvider;
+import com.devjulen.spanishdelight.data.worldgen.ModWorldgenProvider;
+import com.devjulen.spanishdelight.data.worldgen.ModBiomeModifierJsonProvider;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
@@ -47,5 +49,9 @@ public class SpanishDelight {
         gen.addProvider(event.includeServer(), new ModLootTableProvider(out, lookup));
         gen.addProvider(event.includeServer(), new ModRecipeProvider(out, lookup));
         gen.addProvider(event.includeServer(), new ModItemTagsProvider(out, lookup, helper));
+
+        // Worldgen
+        gen.addProvider(event.includeServer(), new ModWorldgenProvider(out, lookup));
+        gen.addProvider(event.includeServer(), new ModBiomeModifierJsonProvider(out));
     }
 }

@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "spanishdelight:wild_green_pepper_placed"
+  ],
+  "step": "vegetal_decoration"
+}
