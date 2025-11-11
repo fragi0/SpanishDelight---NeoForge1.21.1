@@ -51,13 +51,6 @@ public class ModBlocksRegistry {
                             .instabreak()
                             .noOcclusion()));
 
-    // Bloque de prueba (puedes retirar luego)
-    public static final DeferredHolder<Block, Block> TEST_BLOCK =
-            BLOCKS.register("test_block", () ->
-                    new Block(BlockBehaviour.Properties.of()
-                            .mapColor(MapColor.STONE)
-                            .strength(1.0F)));
-
     public static void register(IEventBus bus) {
         BLOCKS.register(bus);
     }

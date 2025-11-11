@@ -1,0 +1,5 @@
+{
+  "render_type": "minecraft:cutout",
+  "parent": "minecraft:block/crop",
+  "textures": { "crop": "spanishdelight:block/green_bean_stage5" }
+}

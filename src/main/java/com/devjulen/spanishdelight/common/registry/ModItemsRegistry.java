@@ -69,10 +69,6 @@ public class ModItemsRegistry {
     public static final DeferredHolder<Item, Item> WILD_GREEN_PEPPER =
             addToTab(ITEMS.register("wild_green_pepper", () -> new BlockItem(ModBlocksRegistry.WILD_GREEN_PEPPER.get(), new Item.Properties())));
 
-    // Bloque de prueba (opcional quitarlo luego)
-    public static final DeferredHolder<Item, Item> TEST_BLOCK_ITEM =
-            addToTab(ITEMS.register("test_block", () -> new BlockItem(ModBlocksRegistry.TEST_BLOCK.get(), new Item.Properties())));
-
     public static void register(IEventBus bus) {
         ITEMS.register(bus);
     }

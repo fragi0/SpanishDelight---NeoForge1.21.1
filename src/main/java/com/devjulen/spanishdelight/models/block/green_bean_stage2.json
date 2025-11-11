@@ -1,4 +1,0 @@
-{
-  "parent": "minecraft:block/crop",
-  "textures": { "layer0": "spanishdelight:block/green_bean_stage2" }
-}

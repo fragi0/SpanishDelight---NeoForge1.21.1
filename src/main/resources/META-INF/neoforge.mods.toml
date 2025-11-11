@@ -1,12 +1,12 @@
 modLoader="javafml"
 loaderVersion="[4,)"
-license="MIT"  # Reemplaza con tu licencia real
+license="MIT"  
 
 [[mods]]
 modId="spanishdelight"  # Reemplaza con el ID de tu mod
 version="1.0.0"         # Reemplaza con la versión de tu mod
 displayName="Spanish Delight"
-authors="Fragi0"
+authors="fragi0"
 description="Añade un montón de delicias a Minecraft"
 logoFile="spanishdelightbanner.png"
 logoBlur=true
