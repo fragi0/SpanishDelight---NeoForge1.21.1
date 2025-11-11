@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "crop": "spanishdelight:block/wild_green_pepper"
+  }
+}
