@@ -47,6 +47,6 @@ public class ModItemModelProvider extends ItemModelProvider {
     private void blockItemTexture(String name) {
         getBuilder(name)
                 .parent(getExistingFile(mcLoc("item/generated")))
-                .texture("crop", modLoc("block/" + name));
+                .texture("layer0", modLoc("block/" + name));
     }
 }
