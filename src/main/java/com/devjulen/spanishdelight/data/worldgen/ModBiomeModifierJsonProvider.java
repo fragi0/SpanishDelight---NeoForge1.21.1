@@ -42,6 +42,7 @@ public class ModBiomeModifierJsonProvider implements DataProvider {
 
         Path path = output.getOutputFolder()
                 .resolve("data")
+                .resolve(SpanishDelight.MOD_ID)
                 .resolve("neoforge")
                 .resolve("biome_modifier")
                 .resolve(filename + ".json");

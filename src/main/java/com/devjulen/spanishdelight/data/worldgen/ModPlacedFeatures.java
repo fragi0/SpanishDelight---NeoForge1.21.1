@@ -3,11 +3,9 @@ package com.devjulen.spanishdelight.data.worldgen;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
-import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.placement.*;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import java.util.List;
 
@@ -17,18 +15,24 @@ public final class ModPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configured = ctx.lookup(Registries.CONFIGURED_FEATURE);
 
         ctx.register(ModWorldgenKeys.WILD_GARLIC_PLACED,
-                new PlacedFeature(configured.getOrThrow(ModWorldgenKeys.WILD_GARLIC_PATCH), commonPlacement(24)));
+                new PlacedFeature(configured.getOrThrow(ModWorldgenKeys.WILD_GARLIC_PATCH),
+                        wildHerbPlacement(12)));
+
         ctx.register(ModWorldgenKeys.WILD_RED_PEPPER_PLACED,
-                new PlacedFeature(configured.getOrThrow(ModWorldgenKeys.WILD_RED_PEPPER_PATCH), commonPlacement(28)));
+                new PlacedFeature(configured.getOrThrow(ModWorldgenKeys.WILD_RED_PEPPER_PATCH),
+                        wildHerbPlacement(14)));
+
         ctx.register(ModWorldgenKeys.WILD_GREEN_PEPPER_PLACED,
-                new PlacedFeature(configured.getOrThrow(ModWorldgenKeys.WILD_GREEN_PEPPER_PATCH), commonPlacement(28)));
+                new PlacedFeature(configured.getOrThrow(ModWorldgenKeys.WILD_GREEN_PEPPER_PATCH),
+                        wildHerbPlacement(14)));
     }
 
-    private static List<PlacementModifier> commonPlacement(int rarityAvgChunks) {
+    // Un parche cada ~N chunks (promedio), tries internos = 32 (definido en RandomPatchConfiguration)
+    private static List<PlacementModifier> wildHerbPlacement(int rarityAvgChunks) {
         return List.of(
                 RarityFilter.onAverageOnceEvery(rarityAvgChunks),
                 InSquarePlacement.spread(),
-                PlacementUtils.HEIGHTMAP,
+                HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE),
                 BiomeFilter.biome()
         );
     }
