@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:crops/tomato"
+    },
+    {
+      "item": "spanishdelight:green_pepper"
+    },
+    {
+      "item": "spanishdelight:garlic"
+    },
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "spanishdelight:gazpacho"
+  }
+}

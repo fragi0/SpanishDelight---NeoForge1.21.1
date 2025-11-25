@@ -25,5 +25,8 @@
   "tooltip.spanishdelight.green_bean": "Puedes conseguirlas comerciando con un aldeano granjero.",
   "tooltip.spanishdelight.press_shift": "Pulsa SHIFT para más información.",
 
-  "creativetab.sdelight_tab": "Spanish Delight"
+  "creativetab.sdelight_tab": "Spanish Delight",
+
+  "advancements.spanishdelight.root.title": "Spanish Delight",
+  "advancements.spanishdelight.root.desc": "¡Saborea los mejores platos de la gastronomía española!"
 }

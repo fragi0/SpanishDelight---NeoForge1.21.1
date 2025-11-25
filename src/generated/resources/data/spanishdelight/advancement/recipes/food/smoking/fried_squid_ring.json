@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_raw": {
+    "has_raw_squid_ring": {
       "conditions": {
         "items": [
           {
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "spanishdelight:fried_squid_ring"
+        "recipe": "spanishdelight:smoking/fried_squid_ring"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_raw"
+      "has_raw_squid_ring"
     ]
   ],
   "rewards": {
     "recipes": [
-      "spanishdelight:fried_squid_ring"
+      "spanishdelight:smoking/fried_squid_ring"
     ]
   }
 }

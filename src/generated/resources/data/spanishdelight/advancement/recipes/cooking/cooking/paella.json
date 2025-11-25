@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_paella_ingredients": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spanishdelight:green_bean"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "spanishdelight:cooking/cooking/paella"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_paella_ingredients"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "spanishdelight:cooking/cooking/paella"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "tag": "c:crops/tomato"
+    },
+    {
+      "item": "spanishdelight:garlic"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "spanishdelight:pantumaca"
+  }
+}

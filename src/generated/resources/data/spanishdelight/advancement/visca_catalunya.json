@@ -1,0 +1,29 @@
+{
+  "parent": "spanishdelight:cosecha_propia",
+  "criteria": {
+    "has_pantumaca": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spanishdelight:pantumaca"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Prepara un Pantumaca. ¡Visca la terra!",
+    "icon": {
+      "count": 1,
+      "id": "spanishdelight:pantumaca"
+    },
+    "title": "Visca Catalunya"
+  },
+  "requirements": [
+    [
+      "has_pantumaca"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

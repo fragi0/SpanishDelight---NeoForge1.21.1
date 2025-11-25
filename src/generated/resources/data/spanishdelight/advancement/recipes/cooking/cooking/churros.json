@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_raw": {
+    "has_sugar": {
       "conditions": {
         "items": [
           {
-            "items": "spanishdelight:squid_ring"
+            "items": "minecraft:sugar"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "spanishdelight:fried_squid_ring_from_smoking"
+        "recipe": "spanishdelight:cooking/cooking/churros"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_raw"
+      "has_sugar"
     ]
   ],
   "rewards": {
     "recipes": [
-      "spanishdelight:fried_squid_ring_from_smoking"
+      "spanishdelight:cooking/cooking/churros"
     ]
   }
 }

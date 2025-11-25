@@ -1,0 +1,29 @@
+{
+  "parent": "spanishdelight:cosecha_propia",
+  "criteria": {
+    "has_tortilla": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spanishdelight:spanish_tortilla"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Cocina una auténtica Tortilla de Patatas.",
+    "icon": {
+      "count": 1,
+      "id": "spanishdelight:spanish_tortilla"
+    },
+    "title": "Españolito de Nacimiento"
+  },
+  "requirements": [
+    [
+      "has_tortilla"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

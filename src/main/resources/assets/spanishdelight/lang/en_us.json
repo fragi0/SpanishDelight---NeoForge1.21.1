@@ -25,5 +25,8 @@
   "tooltip.spanishdelight.green_bean": "Go trade with the farmer villager to obtain it!",
   "tooltip.spanishdelight.press_shift": "Press SHIFT for for info",
 
-  "creativetab.sdelight_tab": "Spanish Delight"
+  "creativetab.sdelight_tab": "Spanish Delight",
+  
+  "advancements.spanishdelight.root.title": "Spanish Delight",
+  "advancements.spanishdelight.root.desc": "Taste the finest dishes from Spanish cuisine!"
 }

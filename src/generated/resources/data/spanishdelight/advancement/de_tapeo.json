@@ -1,0 +1,43 @@
+{
+  "parent": "spanishdelight:espanolito_nacimiento",
+  "criteria": {
+    "has_bravas": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spanishdelight:brava_potatoes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_croquettes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spanishdelight:croquettes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Prepara unas Croquetas o unas Patatas Bravas.",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "spanishdelight:croquettes"
+    },
+    "title": "De Tapeo"
+  },
+  "requirements": [
+    [
+      "has_croquettes"
+    ],
+    [
+      "has_bravas"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

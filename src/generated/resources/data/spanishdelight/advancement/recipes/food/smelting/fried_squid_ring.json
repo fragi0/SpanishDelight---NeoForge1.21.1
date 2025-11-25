@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_squid_ring": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spanishdelight:squid_ring"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "spanishdelight:smelting/fried_squid_ring"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_squid_ring"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "spanishdelight:smelting/fried_squid_ring"
+    ]
+  }
+}

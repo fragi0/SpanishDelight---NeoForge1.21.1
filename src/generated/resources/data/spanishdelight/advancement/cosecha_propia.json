@@ -1,0 +1,55 @@
+{
+  "parent": "spanishdelight:root",
+  "criteria": {
+    "has_garlic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spanishdelight:garlic"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_green_pepper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spanishdelight:green_pepper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_red_pepper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spanishdelight:red_pepper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Recoge tus primeros pimientos, ajos o judías de la huerta.",
+    "icon": {
+      "count": 1,
+      "id": "spanishdelight:green_bean"
+    },
+    "title": "Cosecha Propia"
+  },
+  "requirements": [
+    [
+      "has_garlic"
+    ],
+    [
+      "has_red_pepper"
+    ],
+    [
+      "has_green_pepper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

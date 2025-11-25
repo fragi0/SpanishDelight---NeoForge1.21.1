@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_paprika": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spanishdelight:paprika"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "spanishdelight:cooking/cooking/brava_potatoes"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_paprika"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "spanishdelight:cooking/cooking/brava_potatoes"
+    ]
+  }
+}
