@@ -23,10 +23,19 @@
 
   "tooltip.spanishdelight.squid_ring": "Obtained by killing a squid with any knife",
   "tooltip.spanishdelight.green_bean": "Go trade with the farmer villager to obtain it!",
-  "tooltip.spanishdelight.press_shift": "Press SHIFT for for info",
+  "tooltip.spanishdelight.press_shift": "Press SHIFT for more info",
+  
+  "tooltip.spanishdelight.paella.desc": "The most international Spanish dish. Don't add chorizo!",
+  "tooltip.spanishdelight.spanish_tortilla.desc": "With or without onion, that is the question.",
+  "tooltip.spanishdelight.pil_pil_cod.desc": "Cod bound in an oil and garlic sauce. Delicious.",
+  "tooltip.spanishdelight.croquettes.desc": "Crispy on the outside, creamy on the inside.",
+  "tooltip.spanishdelight.brava_potatoes.desc": "Potatoes with an irresistible spicy sauce.",
+  "tooltip.spanishdelight.churro.desc": "Fried dough ideal for dipping in chocolate.",
+  "tooltip.spanishdelight.gazpacho.desc": "Cold tomato and vegetable soup. Perfect for summer.",
+  "tooltip.spanishdelight.pantumaca.desc": "Bread rubbed with tomato, oil and salt.",
 
   "creativetab.sdelight_tab": "Spanish Delight",
-  
+
   "advancements.spanishdelight.root.title": "Spanish Delight",
   "advancements.spanishdelight.root.desc": "Taste the finest dishes from Spanish cuisine!"
 }

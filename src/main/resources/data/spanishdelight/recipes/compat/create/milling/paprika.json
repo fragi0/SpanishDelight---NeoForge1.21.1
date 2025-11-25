@@ -1,0 +1,26 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "spanishdelight:red_pepper"
+    }
+  ],
+  "results": [
+    {
+      "item": "spanishdelight:paprika",
+      "count": 1
+    },
+    {
+      "item": "spanishdelight:paprika",
+      "chance": 0.25,
+      "count": 1
+    }
+  ],
+  "processingTime": 50,
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

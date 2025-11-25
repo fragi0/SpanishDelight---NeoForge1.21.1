@@ -24,6 +24,15 @@
   "tooltip.spanishdelight.squid_ring": "Se obtiene al matar calamares con cualquier cuchillo.",
   "tooltip.spanishdelight.green_bean": "Puedes conseguirlas comerciando con un aldeano granjero.",
   "tooltip.spanishdelight.press_shift": "Pulsa SHIFT para más información.",
+  
+  "tooltip.spanishdelight.paella.desc": "El plato español más internacional. ¡No le pongas chorizo!",
+  "tooltip.spanishdelight.spanish_tortilla.desc": "Con cebolla o sin cebolla, esa es la cuestión.",
+  "tooltip.spanishdelight.pil_pil_cod.desc": "Bacalao ligado en una salsa de aceite y ajo. Delicioso.",
+  "tooltip.spanishdelight.croquettes.desc": "Crujientes por fuera, cremosas por dentro.",
+  "tooltip.spanishdelight.brava_potatoes.desc": "Patatas con una salsa picante irresistible.",
+  "tooltip.spanishdelight.churro.desc": "Masa frita ideal para mojar en chocolate.",
+  "tooltip.spanishdelight.gazpacho.desc": "Sopa fría de tomate y hortalizas. Perfecta para el verano.",
+  "tooltip.spanishdelight.pantumaca.desc": "Pan restregado con tomate, aceite y sal.",
 
   "creativetab.sdelight_tab": "Spanish Delight",
 
