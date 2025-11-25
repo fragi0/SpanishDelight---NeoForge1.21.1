@@ -9,7 +9,7 @@
     "P": { "item": "spanishdelight:sliced_potato" },
     "E": { "item": "minecraft:egg" },
     "G": { "item": "spanishdelight:sliced_onion" },
-    "T": { "item": "minecraft:torchflower" }  // Ejemplo, cambia por receta real
+    "T": { "item": "minecraft:torchflower" }
   },
   "result": {
     "item": "spanishdelight:spanish_tortilla",
