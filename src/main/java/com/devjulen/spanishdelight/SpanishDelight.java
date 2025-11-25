@@ -1,12 +1,14 @@
 package com.devjulen.spanishdelight;
 
-import com.devjulen.spanishdelight.common.config.ModConfig; // Importar Config
+import com.devjulen.spanishdelight.common.config.ModConfig;
 import com.devjulen.spanishdelight.common.event.ModEvents;
 import com.devjulen.spanishdelight.common.registry.ModBlocksRegistry;
 import com.devjulen.spanishdelight.common.registry.ModCreativeTabs;
 import com.devjulen.spanishdelight.common.registry.ModItemsRegistry;
+import com.devjulen.spanishdelight.common.registry.ModLootModifiers; // IMPORTANTE
 import com.devjulen.spanishdelight.data.ModAdvancementProvider;
 import com.devjulen.spanishdelight.data.ModBlockStateProvider;
+import com.devjulen.spanishdelight.data.ModGlobalLootModifiersProvider; // IMPORTANTE
 import com.devjulen.spanishdelight.data.ModItemModelProvider;
 import com.devjulen.spanishdelight.data.ModItemTagsProvider;
 import com.devjulen.spanishdelight.data.ModLootTableProvider;
@@ -14,8 +16,8 @@ import com.devjulen.spanishdelight.data.ModRecipeProvider;
 import com.devjulen.spanishdelight.data.worldgen.ModWorldgenProvider;
 import com.devjulen.spanishdelight.data.worldgen.ModBiomeModifierJsonProvider;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModContainer; // IMPORTANTE: Nuevo import
-import net.neoforged.fml.config.ModConfig.Type; // Importar Type
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.config.ModConfig.Type;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
@@ -31,6 +33,7 @@ public class SpanishDelight {
         ModBlocksRegistry.register(modEventBus);
         ModItemsRegistry.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
+        ModLootModifiers.register(modEventBus); // REGISTRO DE LOOT MODIFIERS
 
         modEventBus.addListener(this::onAddCreative);
         modEventBus.addListener(this::gatherData);
@@ -55,9 +58,10 @@ public class SpanishDelight {
         gen.addProvider(event.includeServer(), new ModLootTableProvider(out, lookup));
         gen.addProvider(event.includeServer(), new ModRecipeProvider(out, lookup));
         gen.addProvider(event.includeServer(), new ModItemTagsProvider(out, lookup, helper));
-        
-        // Advancements
         gen.addProvider(event.includeServer(), new ModAdvancementProvider(out, lookup, helper));
+        
+        // Global Loot Modifiers (DATAGEN)
+        gen.addProvider(event.includeServer(), new ModGlobalLootModifiersProvider(out, lookup));
 
         // Worldgen
         gen.addProvider(event.includeServer(), new ModWorldgenProvider(out, lookup));

@@ -1,0 +1,13 @@
+{
+  "type": "spanishdelight:add_item",
+  "conditions": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "minecraft:squid"
+      }
+    }
+  ],
+  "item": "spanishdelight:squid_ring"
+}

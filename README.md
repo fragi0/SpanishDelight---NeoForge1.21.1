@@ -1,25 +1,19 @@
+# Spanish Delight (NeoForge 1.21)
 
-Installation information
-=======
+**Spanish Delight** is a Minecraft mod that expands upon [Farmer's Delight](https://curseforge.com/minecraft/mc-mods/farmers-delight), introducing traditional Spanish cuisine dishes like **Spanish Tortilla**, **Paella**, **Gazpacho**, **Tapas** and more!
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+![Banner](spanishdelightbanner.png)
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+## 🥘 Features
+*   **New Crops:** Garlic, Green Bean, Red & Green Peppers.
+*   **Traditional Dishes:** Paella, Tortilla de Patatas, Pil-Pil Cod, Croquettes, Churros...
+*   **Integration:** Fully compatible with Farmer's Delight cooking mechanics (Pot & Cutting Board).
+*   **Create Compat:** Mill your peppers into Paprika!
+*   **Advancements:** A complete progression tree for chefs.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+## Credits
+*   **Original Author:** [DevJulen](https://github.com/DevJulen) (Creator of the original concept and assets).
+*   **NeoForge 1.21 Port & Maintainer:** [fragi0](https://github.com/fragi0) (Code rebuild, modernization, and new features).
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
-
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+## License
+This project is licensed under the [MIT License](LICENSE).

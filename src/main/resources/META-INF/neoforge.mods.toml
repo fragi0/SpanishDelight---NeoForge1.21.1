@@ -3,15 +3,21 @@ loaderVersion="[4,)"
 license="MIT"  
 
 [[mods]]
-modId="spanishdelight"  # Reemplaza con el ID de tu mod
-version="1.0.0"         # Reemplaza con la versión de tu mod
+modId="spanishdelight"
+version="1.0.0"
 displayName="Spanish Delight"
-authors="fragi0"
-description="Añade un montón de delicias a Minecraft"
+authors="DevJulen, fragi0"
+description='''
+Spanish Delight expands upon Farmer's Delight cooking system, introducing traditional Spanish cuisine dishes like Spanish Tortilla, Paella, Gazpacho and more.
+
+Original Mod by DevJulen.
+NeoForge 1.21 Port & Rebuild by fragi0.
+'''
 logoFile="spanishdelightbanner.png"
 logoBlur=true
 displayURL="https://github.com/fragi0/SpanishDelight---NeoForge1.21.1"
 
+# Dependencias
 [[dependencies.spanishdelight]]
 modId="neoforge"
 mandatory=true
@@ -29,6 +35,7 @@ side="BOTH"
 [[dependencies.spanishdelight]]
 modId="farmersdelight"
 mandatory=true
+# Ajustado a versión compatible con 1.21
 versionRange="[1.2.4,)"
 ordering="AFTER"
 side="BOTH"
